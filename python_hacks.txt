@@ -1,0 +1,2 @@
+sort a dict on values: sorted(x.items(), key=operator.itemgetter(1))
+sort a dict on keys: sorted(x.items(), key=operator.itemgetter(0))
