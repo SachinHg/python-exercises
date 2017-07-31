@@ -1,12 +1,10 @@
-def max_sum(A):
-    max_till = max_end = A[0]
-    for i in range(1,len(A)):
-        max_till = max(A[i],A[i]+max_till)
-        max_end = max(max_till,max_end)
-    return max_end
-t = int(input())
-for _ in range(t):
-    n = int(input())
-    A = list(map(int,input().split(' ')))
-    s = max_sum(A)
-    print(s)
+def no_consec1(n):
+    a = [0]*n
+    b = [0]*n
+    a[0] = b[0] = 1
+    for i in range(1,n):
+        a[i] = a[i-1]+b[i-1]
+        b[i] = a[i-1]
+    return a[n-1]+b[n-1]
+
+print(no_consec1(2))
